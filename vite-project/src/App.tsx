@@ -1,9 +1,14 @@
-import ListGroup from "./components/ListGroup";
 
+import Alert from "./components/Alert";
 function App() {
- let items = ["NewYork", "Uganda", "Rwanda", "Kenya"];
 
-  return <div><ListGroup items={items} heading="Cities"/></div>
+  return (
+  <div>
+    <Alert>
+      <span>Hello  World</span>
+    </Alert>
+  </div>
+)
 }
 
 export default App;
