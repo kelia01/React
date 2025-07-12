@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
 interface Props{
     children: string;
     color?: 'primary' | 'danger' | 'secondary';
-    onClick : () => void;
+    onClick : () => void
 }
 
 const Button = ({children, onClick, color}: Props) => {
