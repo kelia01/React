@@ -7,6 +7,11 @@ import Like from "./components/Like";
 
 function App() {
   const [alertVisible, SetAlertVisible] = useState(false)
+  //Group related structures in the same state
+  const [person, setPerson] = useState({
+    firstName: '',
+    lastName: ''
+  })
 
   return (
   <div>
