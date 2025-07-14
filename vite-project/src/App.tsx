@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import Message from "./components/Message";
+import produce from "immer";
 
 function App() {
 
@@ -10,11 +11,16 @@ function App() {
   ]);
 
   const handleClick = () => {
-    bugs.map(bug => bug.id === 1 ? {...bug, state: true} : bug)
+    // setBugs(bugs.map(bug => bug.id === 1 ? {...bug, state: true} : bug));
+
+    setBugs(produce(draft => {
+       const bug = draft.find(bug => bug.id === 1);
+       if(bug) bug.state = true;
+    }))
   }
   return (
   <div>
-    
+    {bugs.map(bug => <p key={bug.id}>{bug.state} {bug.state ? 'Fixed' : 'New'}</p>)}
    <button onClick={handleClick}>click me</button>
   </div>
 )
