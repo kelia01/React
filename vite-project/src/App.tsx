@@ -4,17 +4,21 @@ import Message from "./components/Message";
 
 function App() {
 
-  const [drink, setDrink] = useState({
-    title: 'Americano',
-    price: 5
+  const [customer, setCustomer] = useState({
+    name: 'John',
+    adress: {
+      city: 'San Francisco',
+      zipCode: 94111,
+    }
   });
 
   const handleClick = () => {
-    setDrink({... drink, price: 6});
+    setCustomer({...customer,
+      adress:{...customer.adress, zipCode: 94112}});
   }
   return (
   <div>
-    {drink.price}
+    
    <button onClick={handleClick}>click me</button>
   </div>
 )
