@@ -4,16 +4,18 @@ import Message from "./components/Message";
 
 function App() {
 
-  const [person, setPerson] = useState({
-    firstName: '',
-    lastName: ''
-  })
+  const [drink, setDrink] = useState({
+    title: 'Americano',
+    price: 5
+  });
 
+  const handleClick = () => {
+    setDrink({... drink, price: 6});
+  }
   return (
   <div>
-   <Message />
-   <Message />
-   <Message />
+    {drink.price}
+   <button onClick={handleClick}>click me</button>
   </div>
 )
 }
