@@ -4,17 +4,13 @@ import Message from "./components/Message";
 
 function App() {
 
-  const [tags, setTags] = useState(['happy', 'cheerful']);
+  const [bugs, setBugs] = useState([
+    {bugg:'components',id: 1, state: false},
+    {bugg:'message', id:2, state: false},
+  ]);
 
   const handleClick = () => {
-    //Add an item
-    setTags([...tags, 'exciting']);
-
-    //Remove an item
-    setTags(tags.filter(tag => tag !== 'happy'));
-
-    //Update an item
-    setTags(tags.map(tag => tag === 'happy' ? 'happiness' : tag))
+    bugs.map(bug => bug.id === 1 ? {...bug, state: true} : bug)
   }
   return (
   <div>
