@@ -2,6 +2,7 @@ import React from 'react'
 
 const Hello = () => {
 
+  let count = 0;
   const handleClick = () => {
     alert('Clicked')
   }
