@@ -1,9 +1,10 @@
 import Hello from "./components/ReactExercises/HelloWorld";
+import Counter from "./components/ReactExercises/Counter";
 
 function App() {
   return (
-    <Hello />
-)
+    <Counter />
+  )
 }
 
 export default App;
