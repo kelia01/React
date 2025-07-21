@@ -1,14 +1,15 @@
-import React from 'react'
+interface Props {
+    children: React.ReactNode;
+  }
 
-const Hello = () => {
+const Hello = ({children}: Props) => {
 
-  let count = 0;
   const handleClick = () => {
-    alert('Clicked')
+    alert(`Clicked ${children}`)
   }
   return (
-    <div className='bg-amber-400 w-96 h-96 flex justify-center items-center'>
-      <button className='bg-orange-600 rounded-lg px-2 py-1' onClick={handleClick}>Click Me</button>
+    <div className='bg-amber-400 w-72 h-72 flex justify-center items-center'>
+      <button className='bg-orange-600 rounded-lg px-2' onClick={handleClick}>Click Me</button>
       </div>
   )
 }
