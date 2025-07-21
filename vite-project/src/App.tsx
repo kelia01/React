@@ -1,11 +1,10 @@
-import Hello from "./components/ReactExercises/HelloWorld";
-import Counter from "./components/ReactExercises/Counter";
-import ListRend from "./components/ReactExercises/listRend";
+import Form from "./components/ReactExercises/Form";
+
 
 function App() {
   return (
     <>
-      <ListRend />
+      <Form />
     </>
   );
 }
