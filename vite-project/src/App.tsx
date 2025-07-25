@@ -1,26 +1,21 @@
 import { useState } from "react";
-import FetchComp from "./components/ReactExercises/FetchComp";
+import Navbar from "./components/Navbar";
+import Cart from "./components/Cart";
 import {produce} from 'immer';
 
 
 function App() {
-  const [bugs,setBugs] = useState([
-    {id: 1, title: 'Bug 1', fixed: false},
-    {id: 2, title: 'Bug 2', fixed: false},
-  ]);
+  const [cartItems,setCartItems] = useState(['Product1','Product2']);
 
   const handleClick = () => {
-    //setBugs(bugs.map(bug => bug.id === 1 ? {...bug, fixed: true} : bug))
-    setBugs(produce((draft: any[]) => {
-      const bug = draft.find((bug: { id: number; }) => bug.id === 1);
-      if(bug) bug.fixed = true;
-    }))
-
+    
   }
   return (
     <>
-     {bugs.map(bug => <p key={bug.id}>{bug.title} {bug.fixed ? 'Fixed' : 'New'}</p>)};
-     <button onClick={handleClick}>Click Me</button>
+    <div>
+      <Navbar cartItemsCount={cartItems.length} />
+    <Cart cartItems={cartItems} onClear={() => setCartItems([])}/>
+    </div>
     </>
   );
 }
