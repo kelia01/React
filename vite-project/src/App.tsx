@@ -1,21 +1,20 @@
 import { useState } from "react";
-import Navbar from "./components/Navbar";
-import Cart from "./components/Cart";
+import Game from "./components/Game";
 import {produce} from 'immer';
 
 
 function App() {
-  const [cartItems,setCartItems] = useState(['Product1','Product2']);
+  const [pizza,setPizza] = useState({
+    name: 'Spicy Pepperoni',
+    toppings: ['Mushroom']
+  });
 
   const handleClick = () => {
-    
+    setPizza({ ...pizza, toppings: [...pizza.toppings, 'Yammy']})
   }
   return (
     <>
-    <div>
-      <Navbar cartItemsCount={cartItems.length} />
-    <Cart cartItems={cartItems} onClear={() => setCartItems([])}/>
-    </div>
+     <button onClick={handleClick}>click me</button>
     </>
   );
 }
