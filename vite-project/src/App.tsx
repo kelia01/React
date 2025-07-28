@@ -1,22 +1,15 @@
 import { useState } from "react";
-import Game from "./components/Game";
-import {produce} from 'immer';
+import { produce } from "immer";
+import Expandable from "./components/Expandable";
+import Form from "./components/ReactExercises/Form";
 
 
 function App() {
-  const [pizza,setPizza] = useState({
-    name: 'Spicy Pepperoni',
-    toppings: ['Mushroom']
-  });
-
-  const handleClick = () => {
-    setPizza({ ...pizza, toppings: [...pizza.toppings, 'Yammy']})
-  }
   return (
-    <>
-     <button onClick={handleClick}>click me</button>
-    </>
-  );
+    <div>
+    <Form />
+  </div>
+  )
 }
 
 export default App;

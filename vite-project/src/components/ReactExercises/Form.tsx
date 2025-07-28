@@ -1,27 +1,18 @@
 import React, { useState } from 'react'
 
 const Form = () => {
-
-    const [fname, setFname] = useState('');
-    const [lname, setLname] = useState('');
-    const handleChange = (e:  React.ChangeEvent<HTMLInputElement>) => {
-        const {name, value} =  e.target;
-        if (name === 'fname') {
-          setFname(value);
-        } else if(name === 'lname'){
-          setLname(value);
-        }
-    }
-
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        alert(`Hello ${fname} ${lname}`)
-    }
+  const [fname, setFname] = useState('');
+  const [lname, setLname] = useState('');
+ 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    alert(`Hi ${fname} ${lname}`);
+  }
   return (
-    <form className='flex flex-col space-y-6' onSubmit={handleSubmit}>
-        <input type="text" name='fname' placeholder='First name' value={fname} onChange= {handleChange}/>
-        <input type="text" name='lname' placeholder='Last name' value={lname} onChange= {handleChange}/>
-        <button className='bg-amber-800'>Greet me</button>
+    <form onSubmit={handleSubmit}>
+      <input type="text" placeholder='First name' value={fname} onChange={(e) => setFname(e.target.value)}/>
+      <input type="text" placeholder='Last name' value={lname} onChange={(e) => setLname(e.target.value)}/>
+      <button className='bg-red-500 text-white text-xl px-6 py-1.5'>GREET ME</button>
     </form>
   )
 }
